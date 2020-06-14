@@ -20,7 +20,28 @@ public class BinarySearchTree
 {
     public static bool Contains(Node root, int value)
     {
-        throw new NotImplementedException("Waiting to be implemented.");
+        if (value == root.Value)
+            return true;
+        else
+        {
+            if (value > root.Value) { 
+                if (root.Right == null)
+                    return false;
+                else 
+                { 
+                    return Contains(root.Right, value);
+                }
+            }
+            else
+            {
+                if (root.Left == null)
+                    return false;
+                else
+                { 
+                    return Contains(root.Left, value);
+                }
+            }
+        }
     }
 
     public static void Main(string[] args)
